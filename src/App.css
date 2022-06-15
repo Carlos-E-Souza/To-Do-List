@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  min-height: 80%;
+  height: auto;
+  background-color: #27272A;
+  box-shadow: 0 10px 15px -3px #531072, 0 4px 6px -4px #531072;
+}

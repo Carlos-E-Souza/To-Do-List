@@ -1,5 +1,7 @@
-import { FC, useState } from "react"
-import { TaskProps } from "../Task/Task"
+import { FC, useState, ChangeEventHandler, ChangeEvent } from "react"
+import Task, { TaskProps } from "../Task/Task"
+
+import "./TaskList.css"
 
 interface TaskListProps {}
 
@@ -17,18 +19,49 @@ const TaskList: FC<TaskListProps> = () => {
             ...task_list,
         ]
         setTasks(new_task_list)
+        setTask({ title: "", description: "", isDescVisible: false })
+    }
+
+    const handleInputTaskTitle = (e: ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target
+        setTask({ title: value, isDescVisible: false })
     }
 
     return (
-        <div className="task-list">
-            <input
-                type="text"
-                name="task_title"
-                id="task_title"
-                placeholder="Note Your Task"
-                value={task.title}
-            />
-            <button type="submit" onClick={() => addTask(task)}></button>
+        <div className="tasks-container">
+            <h1 className="tasks-container-title">
+                What's the Plan for Today ?
+            </h1>
+            <header className="tasks-container-header">
+                <input
+                    value={task.title}
+                    onChange={handleInputTaskTitle}
+                    className="task-input"
+                    type="text"
+                    name="title"
+                    id="input_task_title"
+                    placeholder="Note Your Task"
+                    autoFocus
+                    enterKeyHint="next"
+                />
+                <button
+                    type="submit"
+                    className="submit-input-btn"
+                    onClick={() => addTask(task)}>
+                    Submit
+                </button>
+            </header>
+            <ul className="tasks-list">
+                {task_list.map((task) => (
+                    <li key={task.title} className="tasks-list-item">
+                        <Task
+                            title={task.title}
+                            description={task.description}
+                            isDescVisible={task.isDescVisible}
+                        />
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

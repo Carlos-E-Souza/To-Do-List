@@ -1,7 +1,40 @@
 .task {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25rem 0.125rem;
-    width: 90%;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+}
+
+.task-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    width: 75%;
+}
+
+.icons {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.task-icon {
+    margin: 0px 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.task-desc {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #A1A1AA;
+}
+
+.hide {
+    display: none;
 }

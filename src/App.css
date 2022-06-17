@@ -4,7 +4,8 @@
   width: 40%;
   min-height: 80%;
   height: auto;
+  margin-top: 5%;
   background-color: #27272A;
-  box-shadow: 0 10px 15px -3px #531072, 0 4px 6px -4px #531072;
+  box-shadow: 0 10px 15px -3px #8E2DE2, 0 4px 6px -4px #4A00E0;
   border-radius: 1rem;
 }

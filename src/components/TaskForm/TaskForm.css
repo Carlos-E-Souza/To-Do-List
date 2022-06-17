@@ -1,0 +1,143 @@
+.form {
+    width: 90%;
+    margin-top: 2rem;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F4F4F5;
+    border: #4A00E0 2px solid;
+    border-radius: 0.3rem;
+}
+
+.form-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.form-close-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-close-icon:hover {
+    color: #b91010;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1.2rem 0rem 0.4rem;
+}
+
+.form-input-title {
+    width: 85%;
+    height: 2.5rem;
+    color: #F4F4F5;
+    padding-left: 0.4rem;
+    background-color: #18181B;
+    border: 0;
+    outline: none;
+    border-radius: 0.15rem;
+    font-size: medium;
+    margin-bottom: 1rem;
+}
+
+.form-input-title:focus {
+    border: #4A00E0 2px solid;
+    outline: none;
+}
+
+.input-desc {
+    width: 85%;
+    height: 2.5rem;
+    color: #F4F4F5;
+    padding-left: 0.4rem;
+    background-color: #18181B;
+    border: 0;
+    outline: none;
+    border-radius: 0.15rem;
+    font-size: medium;
+    margin-bottom: 1rem;
+    resize: none;
+}
+
+.input-desc:focus {
+    border: #4A00E0 2px solid;
+    outline: none;
+}
+
+.form-submit-btn {
+    background-color: #18181B;
+    color: #A1A1AA;
+	transition: all 0.3s;
+	position: relative;
+    border: none;
+    outline: none;
+    font-size: medium;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.form-submit-btn:hover {
+    color: #F4F4F5;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.form-submit-btn::before {
+	content: '';
+	position: absolute;
+    letter-spacing: 2px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(255,255,255,0.5);
+	border-bottom-color: rgba(255,255,255,0.5);
+	transform: scale(0.1, 1);
+}
+
+.form-submit-btn:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+
+.form-submit-btn::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+}
+
+.form-submit-btn:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}

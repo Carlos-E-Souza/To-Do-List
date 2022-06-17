@@ -1,6 +1,6 @@
-import { FC, useState, ChangeEventHandler, ChangeEvent } from "react"
+import { FC, useState, ChangeEvent } from "react"
 import TaskForm from "../TaskForm/TaskForm"
-import Task, { TaskProps } from "../Task/Task"
+import Task from "../Task/Task"
 
 import "./TaskList.css"
 

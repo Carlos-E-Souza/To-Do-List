@@ -1,5 +1,11 @@
-import { ChangeEventHandler, FC, useState } from "react"
-import { PencilLine, Trash, CaretDown, CaretUp } from "phosphor-react"
+import { FC, useState } from "react"
+import {
+    PencilLine,
+    Trash,
+    CaretDown,
+    CaretUp,
+    CheckCircle,
+} from "phosphor-react"
 
 import "./Task.css"
 
@@ -22,10 +28,23 @@ const Task: FC<TaskProps> = ({
     changeDescVisible,
     showTaskForm,
 }) => {
+    const [task_finished, setTaskFinished] = useState<boolean>(false)
+
+    const handleTaskFinished = () => {
+        if (task_finished) {
+            setTaskFinished(false)
+        } else {
+            setTaskFinished(true)
+        }
+    }
+
     return (
-        <div className="task">
+        <div className={task_finished ? "task finished" : "task"}>
             <h2 className="task-title">{title}</h2>
             <div className="icons">
+                <span className="task-icon" onClick={handleTaskFinished}>
+                    <CheckCircle />
+                </span>
                 <span className="task-icon" onClick={() => showTaskForm(id)}>
                     <PencilLine />
                 </span>
@@ -39,7 +58,7 @@ const Task: FC<TaskProps> = ({
                 </span>
             </div>
             <span className={isDescVisible ? "task-desc" : "hide"}>
-                <p>{description}</p>
+                {description}
             </span>
         </div>
     )

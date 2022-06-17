@@ -1,5 +1,5 @@
 import { XCircle } from "phosphor-react"
-import { ChangeEvent, ChangeEventHandler, FC, MouseEventHandler } from "react"
+import { ChangeEventHandler, FC } from "react"
 
 import "./TaskForm.css"
 

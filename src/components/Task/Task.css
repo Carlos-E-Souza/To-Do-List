@@ -7,6 +7,11 @@
     width: 100%;
 }
 
+.finished {
+    color: #A1A1AA;
+    text-decoration: line-through;
+}
+
 .task-title {
     font-size: 1.1rem;
     font-weight: 600;
@@ -27,12 +32,15 @@
     font-weight: 500;
     width: 1.5rem;
     height: 1.5rem;
+    cursor: pointer;
 }
 
 .task-desc {
     font-size: 0.9rem;
     font-weight: 400;
     color: #A1A1AA;
+    word-break: keep-all;
+    padding: 0.3rem;
 }
 
 .hide {
